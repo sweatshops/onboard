@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  root 'home#index'
+
+  get 'dropbox_auth' => 'home#dropbox_auth'
+  get 'dropbox_callback' => 'home#dropbox_callback'
+  get 'dropbox_token' => 'home#dropbox_token'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

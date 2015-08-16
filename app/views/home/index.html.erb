@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Onboard</title>
+  </head>
+  <body>
+    <div class="header">
+    	<div class="balloon">
+    	</div>
+    	<div class="logoname">
+    		FlightInvite
+    	</div>
+   	</div>
+
+   	<div class="content">
+   		<span class="slogan"></span>
+   		<br>
+
+   		<div style="width:100%; text-align:center;">
+        <%= link_to({:action => :dropbox_auth}, {:class => "btn btn-default centerbutton"}) do %>
+          <span><%= image_tag 'dropbox.png' %></img></span><span> Login with Dropbox&nbsp;</span>
+        <% end %>
+   		</div>
+
+   		<br><br><br><br><br>
+
+      <% if !flash.empty? %>
+      <div id="flash"> 
+          <% flash.each do |key, value| %>
+                <%= flash[key] %> <br>
+          <% end %>   
+      </div>
+      <% end %>
+      
+   	</div>
+  </body>
+</html>

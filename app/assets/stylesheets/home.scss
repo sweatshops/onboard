@@ -1,0 +1,151 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200);
+* {margin: 0; padding: 0; outline: 0;}
+
+html{
+  height: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  background-color: #0060ac;
+  color: #EEE;
+  font-size: 16px;
+  color: #222;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+.header
+{
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: #3e9de6; /* Old browsers */
+  background: -moz-linear-gradient(top, #3e9de6 0%, #0060ac 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e9de6), color-stop(100%,#0060ac)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #3e9de6 0%,#0060ac 100%); /* W3C */
+
+  text-align: center;
+
+  /*
+  border-bottom: 1px solid #d0d4d9;
+  box-shadow: 0 1px 1px #d0d4d9;
+  */
+}
+
+.header > .balloon
+{
+  width: 200px;
+  height: 100px;
+  background-image: image-url('balloon.png');
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+
+}
+
+.content {
+  background-color: #0060ac;
+  width:100%;
+}
+
+.slogan{
+  width:100%;
+  text-align: center;
+}
+
+.centerbutton
+{
+  width: 300px;
+  height: 100px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.centerbutton span {
+  font-size: 20px;
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
+}
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-default.active,
+.btn-primary.active,
+.btn-success.active,
+.btn-info.active,
+.btn-warning.active,
+.btn-danger.active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn-default .badge,
+.btn-primary .badge,
+.btn-success .badge,
+.btn-info .badge,
+.btn-warning .badge,
+.btn-danger .badge {
+  text-shadow: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+}
+.btn-default {
+  text-shadow: 0 1px 0 #fff;
+  background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+  background-image:      -o-linear-gradient(top, #fff 0%, #e0e0e0 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e0e0e0));
+  background-image:         linear-gradient(to bottom, #fff 0%, #e0e0e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #dbdbdb;
+  border-color: #ccc;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background-color: #e0e0e0;
+  background-position: 0 -15px;
+}
+.btn-default:active,
+.btn-default.active {
+  background-color: #e0e0e0;
+  border-color: #dbdbdb;
+}
+.btn-default.disabled,
+.btn-default:disabled,
+.btn-default[disabled] {
+  background-color: #e0e0e0;
+  background-image: none;
+}

@@ -43,7 +43,8 @@ class CsvController < ApplicationController
       csv_content = ""
     end
     
-    if csv_content.length > 10000
+    #maximum 5kb per text file
+    if csv_content.length > 5000
       @result = {:result =>'false' , :message => 'File size limit reached'}
       render json: @result, :status => 400
       return

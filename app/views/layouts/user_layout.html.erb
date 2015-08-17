@@ -13,7 +13,12 @@
   <body>
   	<div class="container">
   		<div class="headerbar">
-  			<div class="icon"></div>
+        
+  			<div class="icon">
+          <%= link_to({:controller => :users, :action => :index}) do %>
+          <div style="display:block; width:100%; height:100%;"></div>
+          <% end %>
+        </div>
         <span class="userinfo">User ID : <%= session[:user_uid] %></span>
   		</div>
 

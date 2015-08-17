@@ -33,13 +33,15 @@ a:visited{
   width: 100%;
   height: 100px;
   overflow: hidden;
-  background: #3e9de6; /* Old browsers */
-  background: -moz-linear-gradient(top, #3e9de6 0%, #0060ac 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e9de6), color-stop(100%,#0060ac)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #3e9de6 0%,#0060ac 100%); /* W3C */
+  background-color: #3e9de6; /* Old browsers */
+  
+  /*background: -moz-linear-gradient(bottom, #3e9de6 0%, #0060ac 100%); /* FF3.6+ */
+  /*background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#3e9de6), color-stop(100%,#0060ac)); /* Chrome,Safari4+ */
+  /*background: -webkit-linear-gradient(bottom, #3e9de6 0%,#0060ac 100%); /* Chrome10+,Safari5.1+ */
+  /*background: -o-linear-gradient(bottom, #3e9de6 0%,#0060ac 100%); /* Opera 11.10+ */
+  /*background: -ms-linear-gradient(bottom, #3e9de6 0%,#0060ac 100%); /* IE10+ */
+  /*background: linear-gradient(to top, #3e9de6 0%,#0060ac 100%); /* W3C */
+
 
   text-align: center;
 
@@ -62,7 +64,15 @@ a:visited{
 
 .contenthome {
   background-color: #0060ac;
+  background: -moz-linear-gradient(top, #3e9de6 0%, #0060ac 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e9de6), color-stop(100%,#0060ac)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #3e9de6 0%,#0060ac 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #3e9de6 0%,#0060ac 100%); /* W3C */
   width:100%;
+
+  z-index: 3;
 }
 
 .flash{
@@ -76,7 +86,8 @@ a:visited{
   width:100%;
   text-align: center;
   color: #FFF;
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: 200;
 }
 
 .centerbutton
@@ -95,8 +106,8 @@ a:visited{
 
 .section{
   color: #eee;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
@@ -113,8 +124,35 @@ a:visited{
   height: auto;
 }
 
+.section img.box{
+  border-radius: 5px;
+  -ms-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+  -moz-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+  -o-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+  -webkit-box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+  box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15);
+}
+
 .section a{
   color: #E7FFFD;
+}
+
+.footerhome{
+  width: 100%;
+  background-color: #222;
+  color: #FFF;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+.footerhome a{
+  color: #FFF;
+}
+
+.footerhome a:hover{
+  color:#DDD;
 }
 
 .btn-default,

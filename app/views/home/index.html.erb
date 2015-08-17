@@ -32,17 +32,17 @@
     <span class="text"><strong>Step 1</strong> - Add our API URL to your form action (POST method) with the parameter <em><u>first_name</u></em> , <em><u>last_name</u></em> and <em><u>email</u></em> </span>
     <br><br>
     <span>(optionally add <em><u>redirect_url</u></em> to redirect back to page after submission)</span>
-    <%= image_tag 'step1.png' %>
+    <%= image_tag('step1.png', :class => 'box') %>
   </div>
 
   <div class="section">
-    <span class="text"><strong>Step 2</strong> - The beta tester data will be saved to your dropbox as csv file everytime a user sign up for beta testing</span><br>
-    <%= image_tag 'step3.png' %>
+    <span class="text"><strong>Step 2</strong> - The beta tester data will be appended to the csv file saved in dropbox everytime a user sign up for beta testing</span><br>
+    <%= image_tag('step3.png', :class => 'box') %>
   </div>
 
   <div class="section">
-    <span class="text"><strong>Step 3</strong> - Directly import the csv file in iTunes Connect to add external tester</span><br>
-    <%= image_tag 'step4.png' %>
+    <span class="text"><strong>Step 3</strong> - Import the csv file in iTunes Connect to add external tester</span><br>
+    <%= image_tag('step4.png', :class => 'box') %>
   </div>
 
   <div class="section">
@@ -52,7 +52,12 @@
 
   <div class="section" style="text-align:center;">
     <a href="#top"><i class="fa fa-angle-up fa-4x"></i></a>
+    <br><br>
+    
   </div>
+</div>
+<div class="footerhome">
+  <a href="https://github.com/sweatshops/onboard/wiki"><i class="fa fa-github fa-3x"></i></a>
 </div>
 
 <script>

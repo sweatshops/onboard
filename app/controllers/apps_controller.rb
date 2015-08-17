@@ -33,7 +33,17 @@ class AppsController < ApplicationController
 	end
 
   def create
+    current_user = User.find(session[:user_id])
+
+    app_count = current_user.apps.count
+
     @app = App.new(app_params)
+
+    if app_count >= 2
+      flash[:warning] = 'Sorry, each user can only have maximum 2 apps at a time'
+      render("new")
+      return
+    end
 
     current_user = User.find(session[:user_id])
     @app.user = current_user

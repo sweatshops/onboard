@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'apps/:id' => 'apps#edit', constraints: { id: /\d+/ }
   patch 'apps/:id' => 'apps#update', constraints: { id: /\d+/ }
   delete 'apps/:id' => 'apps#delete', constraints: { id: /\d+/ }
+
+  post 'api/:appid/:appname' => 'csv#add', constraints: { appid: /\d+/ , appname: /[a-zA-z0-9\-_]+/ }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

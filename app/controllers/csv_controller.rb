@@ -23,6 +23,13 @@ class CsvController < ApplicationController
       return
     end
 
+    #request_origin_url is not blank
+    if !@app.request_origin_url.blank? && request.env["HTTP_REFERER"] != @app.request_origin_url
+       @result = {:result =>'false' , :message => 'Request origin url does not match'}
+      render json: @result, :status => 400
+      return
+    end
+
     first_name = params[:first_name]
     last_name = params[:last_name]
     email = params[:email]

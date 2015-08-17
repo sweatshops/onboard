@@ -46,6 +46,14 @@ class CsvController < ApplicationController
 
     response = dropbox_client.put_file('/' + @app.filePath, csv_content, true)
 
+    #redirect to page if redirect_url exist
+    if params.has_key?(:redirect_url)
+      if params[:redirect_url] =~ URI::regexp
+        redirect_to params[:redirect_url]
+        return
+      end
+    end
+
     @result = {:result => 'true', :content => '"'+ first_name +'","' + last_name + '","' + email + '"', :file_size => csv_content.length}
     render json: @result, :status => 200
     return

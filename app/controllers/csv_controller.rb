@@ -54,7 +54,7 @@ class CsvController < ApplicationController
       end
     end
 
-    @result = {:result => 'true', :content => '"'+ first_name +'","' + last_name + '","' + email + '"', :file_size => csv_content.length}
+    @result = {:result => 'true', :content => '"'+ first_name +'","' + last_name + '","' + email + '"', :requester => request.env["REMOTE_HOST"], :file_size => csv_content.length}
     render json: @result, :status => 200
     return
   end

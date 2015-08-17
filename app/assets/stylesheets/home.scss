@@ -75,6 +75,8 @@ a:visited{
 .slogan{
   width:100%;
   text-align: center;
+  color: #FFF;
+  font-size: 2em;
 }
 
 .centerbutton
@@ -89,6 +91,30 @@ a:visited{
 
 .centerbutton span {
   font-size: 20px;
+}
+
+.section{
+  color: #eee;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
+.section .text{
+  font-size: 1.5em;
+}
+
+.section img{
+  margin-top: 10px;
+  width:100%;
+  height: auto;
+}
+
+.section a{
+  color: #E7FFFD;
 }
 
 .btn-default,

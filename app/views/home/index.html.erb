@@ -7,7 +7,9 @@
 	</div>
 </div>
 <div class="content">
-  	<span class="slogan"></span>
+  <div class="slogan">
+    Easily add external beta tester for iOS Testflight
+  </div>
   <div class="flash">
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %> alert-dismissible" role="alert">
@@ -26,4 +28,36 @@
   </div>
   <br><br><br><br><br>
   
+  <div class="section">
+    <span class="text"><strong>Step 1</strong> - Add our API URL to your form action (POST method) with the parameter <em><u>first_name</u></em> , <em><u>last_name</u></em> and <em><u>email</u></em> </span>
+    <br><br>
+    <span>(optionally add <em><u>redirect_url</u></em> to redirect back to page after submission)</span>
+    <%= image_tag 'step1.png' %>
+  </div>
+
+  <div class="section">
+    <span class="text"><strong>Step 2</strong> - The beta tester data will be saved to your dropbox as csv file everytime a user sign up for beta testing</span><br>
+    <%= image_tag 'step3.png' %>
+  </div>
+
+  <div class="section">
+    <span class="text"><strong>Step 3</strong> - Directly import the csv file in iTunes Connect to add external tester</span><br>
+    <%= image_tag 'step4.png' %>
+  </div>
+
+  <div class="section">
+    <span class="text"><strong>Step 4</strong> - Done! Easy isn't it?</span><br>
+    <%= image_tag 'step5.png' %>
+  </div>
+
+  <div class="section" style="text-align:center;">
+    <a href="#top"><i class="fa fa-angle-up fa-4x"></i></a>
+  </div>
 </div>
+
+<script>
+  $("a[href='#top']").click(function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+  });
+</script>

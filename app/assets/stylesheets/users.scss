@@ -1,0 +1,119 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200);
+* {margin: 0; padding: 0; outline: 0;}
+
+html{
+  height: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  background-color: #FCFCFC;
+  color: #EEE;
+  font-size: 16px;
+  color: #222;
+}
+
+a{
+  /* color: #007ee5;*/
+  color: #75809E;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+.container{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #FFF;
+}
+
+.headerbar
+{
+  height: 100px;
+  overflow: hidden;
+
+  padding-left: 20px;
+
+  border-bottom: 1px solid #d0d4d9;
+  clear: both;
+  z-index: 5;
+}
+
+.headerbar > .icon
+{
+  width: 100px;
+  height: 100px;
+  background-image: image-url('topicon.png');
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+
+}
+
+.headerbar > .userinfo{
+  position: relative;
+  bottom: 10px;
+  left: 30px;
+}
+
+.content {
+  width:100%;
+  background-color: #FFF;
+}
+
+.leftbar
+{
+  float:left;
+  width: 150px;
+  border-right: 1px solid #ccc;
+  background-color: #FFF;
+
+  padding-top: 1em;
+  padding-left: 20px;
+}
+
+.leftbar ul{
+  list-style-type: none;
+}
+
+.leftbar li{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.rightbar
+{
+  margin-left: 100px;
+  background-color: #FFF;
+  padding-top: 50px;
+  padding-left: 100px;
+}
+
+.appname a{
+  text-decoration: underline;  
+}
+
+.appname a:hover{
+  text-decoration: underline;
+}
+
+
+.slogan{
+  width:100%;
+  text-align: center;
+}

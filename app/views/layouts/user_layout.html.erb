@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag  'users' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <title>Onboard</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  	<div class="container">
+  		<div class="headerbar">
+  			<div class="icon"></div>
+        <span class="userinfo">User ID : <%= session[:user_uid] %></span>
+  		</div>
+
+  		<div class="leftbar">
+  			<u><strong>Apps</strong></u>
+  			<ul>
+  				<li><span><%= link_to({:controller => :apps, :action => :new}) do %> <i class="fa fa-plus"></i> Add <% end %></span></li>
+  				<li><%= link_to({:controller => :apps, :action => :index}) do %> <i class="fa fa-list"></i> View <% end %></span></li>
+  			</ul>
+  			<br>
+  			<u><strong>Profile</strong></u>
+  			<ul>
+  				<li><span><%= link_to({:controller => :users, :action => :setting}) do %><i class="fa fa-cog"></i> Setting<% end %></span></li>
+  				<li><%= link_to({:controller => :users, :action => :logout}) do %><i class="fa fa-sign-out"></i> Logout<% end %></span></li>
+  			</ul>
+  		</div>
+
+  		<div class="rightbar">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %> alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <%= value %>
+          </div>
+        <% end %>
+  			<%= yield %>
+		  </div>
+  	</div>
+    <script>
+    $( document ).ready(function() {
+      $('[data-toggle="popover"]').popover()
+    });
+    </script>
+  </body>
+</html>

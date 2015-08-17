@@ -9,7 +9,18 @@ Rails.application.routes.draw do
 
   get 'dropbox_auth' => 'home#dropbox_auth'
   get 'dropbox_callback' => 'home#dropbox_callback'
-  get 'dropbox_token' => 'home#dropbox_token'
+  get 'dropbox_deauth' => 'home#dropbox_deauth'
+
+  get 'user' => 'users#index'
+  get 'user/setting' => 'users#setting'
+  get 'user/logout' => 'users#logout'
+
+  get 'apps' => 'apps#index'
+  get 'apps/new' => 'apps#new'
+  post 'apps/create' => 'apps#create'
+  get 'apps/:id' => 'apps#edit', constraints: { id: /\d+/ }
+  patch 'apps/:id' => 'apps#update', constraints: { id: /\d+/ }
+  delete 'apps/:id' => 'apps#delete', constraints: { id: /\d+/ }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

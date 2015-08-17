@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
 	def dropbox_callback
 		if !params.has_key?(:state) || !params.has_key?(:code)
-			flash[:error] = "Authorization failed"
+			flash[:danger] = "Authorization failed"
 			redirect_to root_path
 			return
 		end
@@ -30,23 +30,32 @@ class HomeController < ApplicationController
 
 		if response.body.has_key?("access_token") && response.body.has_key?("uid")
 			
+			tmpUser = User.where(:uid => response.body["uid"]).first_or_create
+			tmpUser.update(:access_token => response.body["access_token"])
 
-			tmpUser = User.where(:uid => response.body["uid"]).first_or_create do |user|
-				user.access_token = response.body["access_token"]
-			end
+			session[:user_uid] = tmpUser.uid
+      session[:user_id] = tmpUser.id
 
-			flash[:success] = "You have successfully authorized with dropbox. with access token " + response.body["access_token"] + " and uid " + response.body["uid"]
+			#flash[:success] = "You have successfully authorized with dropbox. with access token " + response.body["access_token"] + " and uid " + response.body["uid"]
 
-			redirect_to root_path
+			redirect_to user_path
 			return
 		else
-			flash[:error] = "Authorization failed"
+			flash[:danger] = "Authorization failed"
 			redirect_to root_path
 			return
 		end
 	end
 
-	def dropbox_token
+	def dropbox_deauth
+		if session[:user_id]
+			current_user = User.find(session[:user_id])
+			dropbox_client = DropboxClient.new(current_user.access_token)
+			dropbox_client.disable_access_token
+			reset_session
+		end
 
+		flash[:success] = "Successfully logged out"
+		redirect_to root_path
 	end
 end

@@ -1,0 +1,18 @@
+<h2>My Apps </h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th> <th>App Name</th> <th>iTunes App ID</th> <th>Allowed request origin</th> <th>REST URL</th> <th>CSV</th>
+    </tr>
+    <% tmpCount = 0 %>
+    <% @apps.each do |app| %>
+      <% tmpCount += 1 %>
+      <tr>
+        <td><%= tmpCount%></td> <td class="appname"><%= link_to(app.name, {:action => :edit, :id => app.id}) %></td> <td><%= app.itunes_app_id %></td> <td><%= app.request_origin_url %></td> <td><button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="<%= app.restURL %>">
+  Show
+</button>
+</td><td> <%= link_to('Download', app.download_link , :class => "btn btn-default", :target => '_blank') %></td>
+      </tr>
+    <% end %>
+  </thead>
+</table>

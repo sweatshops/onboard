@@ -1,0 +1,29 @@
+<% if @app.errors.any? %>
+  <% @app.errors.full_messages.each do |message| %>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h2><%= @app.name %></h2>
+<%= form_for(@app, :url => {:action => "update", :id => @app.id}, :html => {class: "form-div", :multipart => true}, :method => :patch ) do |f|  %>
+  <div class="form-group">
+    <label for="appname">App Name</label>
+    <%= f.text_field :name, placeholder: "App name", class: "form-control" , disabled: "disabled" %>
+  </div>
+  <div class="form-group">
+    <label for="app_itunes_id">iTunes App ID (Optional)</label>
+    <%= f.text_field :itunes_app_id, placeholder: "Numeric ID of app in iTunes (Optional)", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label for="app_request_url">Request URL (Optional)</label><br>
+    <span>Only HTTP request from this URL (i.e : your sign up form page) will be accepted, if left blank then any URL is accepted</span><br>
+    <%= f.text_field :request_origin_url, placeholder: "eg : http://your_app_site.com/signup_page.html (Optional)", class: "form-control" %>
+  </div>
+  <%= f.submit "Update", class: "btn btn-default" %>
+  <div style="float:right;">
+    <%= link_to("Delete", {:action => :delete, :id => @app.id}, {:method => :delete, "data-confirm" => "Are you sure to delete? The .csv file will still remain in dropbox.", "class" => "btn btn-danger"}) %>
+  </div>
+<% end %>

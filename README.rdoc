@@ -2,6 +2,9 @@
 
 Environment variable that must be set :  
 
-`DROPBOX_API_KEY` = your dropbox app key  
-`DROPBOX_CALLBACK` = your web app callback URL after user authenticated dropbox  
-`API_BASE_URL` = Base URL for REST API
+DROPBOX_API_KEY = your dropbox app key  
+
+DROPBOX_CALLBACK = your web app callback URL after user authenticated dropbox  
+
+API_BASE_URL = Base URL for REST API  
+
